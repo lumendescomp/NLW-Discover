@@ -151,3 +151,44 @@ margin-left: 2.4rem;
     margin-top: 1.3rem;
     line-height: 1.9rem;
 }
+
+#qtype {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+#select {
+    margin-right: 2rem;
+    color: var(--icon-details);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+select {
+   padding: 1rem;
+   border: 1px solid var(--icon-details);
+   border-radius: 5px;
+   outline: none;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+#filter form {
+    display: flex;
+    margin: 3rem 0;
+}
+
+#filter form input {
+    margin-right: 2rem;
+    border: 1px solid var(--icon-details);
+    padding-left: 1rem;
+    outline: none;
+}
+
+#filter form button {
+    padding: 0 2rem;
+}

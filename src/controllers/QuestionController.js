@@ -27,15 +27,20 @@ module.exports = {
     async create(req, res) {
         const db = await Database();
         const question = req.body.question;
-        const roomId = req.params.room;
-
+        const roomId = req.body.room;
+        const category = req.body.category;
+        console.log(question)
+        console.log(category)
+        console.log(roomId)
         await db.run(`INSERT INTO questions (
            title,
            room,
+           category,
            read
         ) VALUES (
             "${question}",
             ${roomId},
+            "${category}",
             0
         )`)
 

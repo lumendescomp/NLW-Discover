@@ -38,7 +38,16 @@
         <main>
             <section id='question-form'>
                 <h2>Faça sua pergunta</h2>
-                <form action="/question/create/<%= roomId %>" method="POST">
+                <form action="/question/create/<%= roomId %>" method="POST" id="category">
+                    <div id="qtype">
+                        <p id="select">Escolha a categoria:</p>
+                        <select name="category" id="category">
+                            <option name='category' value="html">HTML</option>
+                            <option name='category' value="css">CSS</option>
+                            <option name='category' value="js">JS</option>
+                        </select>
+                    </div>
+
                     <label class="sr-only" for="question">O que você quer perguntar?</label>
                     <textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea>
                     <footer>
@@ -51,12 +60,21 @@
                 </form>
             </section>
 
+            <section id="filter">
+                <form action="/room/:room>" method="GET">
+                    <input type="text" name="filter" placeholder="Filtrar por categoria">
+                    <button type="submit">Filtrar</button>
+                </form>
+            </section>
+
             <section id="questions">
                 <h2 class="sr-only">Perguntas da comunidade</h2>
                 <div class="questions">
+
                     <% if (isNoQuestions) { %>
                         <%- include('parts/no-question') %>
                             <%}%>
+
                                 <% questions.forEach(question=> { %>
                                     <div class="question-wrapper">
                                         <div class="question-content">

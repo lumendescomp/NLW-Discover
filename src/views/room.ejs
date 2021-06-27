@@ -61,7 +61,7 @@
             </section>
 
             <section id="filter">
-                <form action="/room/:room>" method="GET">
+                <form action="/room/filter/<%= roomId %>" method="GET">
                     <input type="text" name="filter" placeholder="Filtrar por categoria">
                     <button type="submit">Filtrar</button>
                 </form>

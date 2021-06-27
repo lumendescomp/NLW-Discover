@@ -27,11 +27,9 @@ module.exports = {
     async create(req, res) {
         const db = await Database();
         const question = req.body.question;
-        const roomId = req.body.room;
+        const roomId = req.params.room;
         const category = req.body.category;
-        console.log(question)
-        console.log(category)
-        console.log(roomId)
+
         await db.run(`INSERT INTO questions (
            title,
            room,

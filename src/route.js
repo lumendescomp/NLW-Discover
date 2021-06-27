@@ -13,7 +13,7 @@ route.post('/enterroom', RoomController.enter);
 route.post('/create-room', RoomController.create);
 //Vamos pedir para um controller fazer a renderização pra o layout ser dinâmico.
 route.get('/room/:room', RoomController.open)
-route.get('/room/:room', RoomController.filter)
+route.get("/room/filter/:room", RoomController.filter);
 //7-Logo, nossas rotas que estão conectadas aos formulários estarão associada aos controllers definididos aqui. 
 //8-Formato que o formulário de dentro da modal tem que passar informação. Como o código da sala, a pergunta selecionada e ação(marcar como lida ou excluir)
 //
